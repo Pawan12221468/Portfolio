@@ -1,14 +1,7 @@
 import { motion } from 'framer-motion';
-import { FiExternalLink } from 'react-icons/fi';
 import { useRef } from 'react';
 
-interface Certificate {
-  title: string;
-  issuer: string;
-  date: string;
-  link: string;
-  image: string;
-}
+
 
 export default function CertificatesSection() {
   const certificates = [

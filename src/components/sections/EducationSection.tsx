@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { FiBook } from 'react-icons/fi';
 
 export default function EducationSection() {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FiCode, FiDatabase, FiTool, FiMonitor } from 'react-icons/fi';
+import { FiCode, FiDatabase, FiMonitor } from 'react-icons/fi';
 import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNodedotjs, SiExpress, SiMongodb, SiGit, SiFigma, SiRedux, SiTypescript, SiTailwindcss } from 'react-icons/si';
 
 const categories = [
