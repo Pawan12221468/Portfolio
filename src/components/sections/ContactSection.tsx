@@ -9,19 +9,19 @@ const contactInfo = [
   {
     icon: <FiMail className="w-6 h-6" />,
     label: 'Email',
-    value: 'namanprakash2580@gmail.com',
-    link: 'mailto:namanprakash2580@gmail.com'
+    value: 'puk.dubeyo1@gmail.com',
+    link: 'mailto:puk.dubeyo1@gmail.com'
   },
   {
     icon: <FiPhone className="w-6 h-6" />,
     label: 'Phone',
-    value: '+91 7380789165',
-    link: 'tel:+917380789165'
+    value: '+91 6392497760',
+    link: 'tel:+916392497760'
   },
   {
     icon: <FiMapPin className="w-6 h-6" />,
     label: 'Location',
-    value: 'Phagwara, Punjab, India',
+    value: 'Punjab, India',
     link: null
   }
 ];
@@ -43,7 +43,7 @@ export default function ContactSection() {
     e.preventDefault();
     
     // Create mailto URL with form data
-    const mailtoUrl = `mailto:namanprakash2580@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+    const mailtoUrl = `mailto:puk.dubeyo1@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )}`;
     

@@ -50,7 +50,7 @@ export default function Navbar() {
               to="/"
               className="text-xl font-bold tracking-tight text-primary-600 dark:text-primary-400"
             >
-              Naman Prakash
+              Pawan Dubey
             </Link>
           </div>
 

@@ -35,7 +35,7 @@ export default function HeroSection() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-2"
             >
-              Naman Prakash
+              Pawan Kumar Dubey
             </motion.h1>
             
             <motion.h2
@@ -73,7 +73,7 @@ export default function HeroSection() {
               transition={{ delay: 0.6, duration: 0.5 }}
               className="flex flex-wrap gap-4"
             >
-              <a href="/Naman_CV.pdf" download="Naman_CV.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/PawanCV.pdf" download="PawanCV.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="lg">
                   Download CV
                 </Button>
@@ -87,7 +87,7 @@ export default function HeroSection() {
               className="flex space-x-6 mt-8"
             >
               <a 
-                href="https://github.com/NamanPrakash99" 
+                href="https://github.com/Pawan12221468" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors"
@@ -95,7 +95,7 @@ export default function HeroSection() {
                 <FiGithub className="w-6 h-6" />
               </a>
               <a 
-                href="https://www.linkedin.com/in/naman2580/" 
+                href="https://www.linkedin.com/in/pawan-kumar-dubey-56bb16253/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors"
@@ -103,7 +103,7 @@ export default function HeroSection() {
                 <FiLinkedin className="w-6 h-6" />
               </a>
               <a 
-                href="mailto:namanprakash2580@gmail.com" 
+                href="mailto:puk.dubeyo1@gmail.com" 
                 className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors"
               >
                 <FiMail className="w-6 h-6" />
@@ -124,8 +124,8 @@ export default function HeroSection() {
                 <div className="bg-white dark:bg-gray-900 rounded-full p-2">
                   {/* Profile image */}
                   <img 
-                    src="/profile2.png" 
-                    alt="Naman Prakash" 
+                    src="/pic.jpg" 
+                    alt="Pawan Kumar Dubey" 
                     className="w-full aspect-square rounded-full object-cover object-center"
                   />
                 </div>

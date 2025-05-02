@@ -6,65 +6,20 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 // Project data
 const projects = [
   {
-    id: 1,
-    title: 'CCTV Smart Surveillance & Monitoring System',
-    description: 'Developed a web-based surveillance system leveraging existing CCTV infrastructure to enable real-time crowd monitoring, crime detection, and worksite oversight, improving operational efficiency by 50%.',
-    image: '/Dashboard.png',
-    technologies: ['React', 'Node.js', 'WebRTC', 'Socket.IO', 'MongoDB', 'Tensorflow'],
-    features: [
-      'Integrated a centralized dashboard for live video access, analytics, and alert notifications, enhancing situational awareness and response time by 40%',
-      'Implemented smart monitoring features such as zone-based activity tracking and automated alert generation, reducing manual intervention by 35%',
-      'Enhanced public safety and worksite supervision through role-based access control and secure streaming, ensuring data integrity and controlled visibility'
-    ],
-    github: 'https://github.com/NamanPrakash99/CCTV-Surveillance',
-    live: 'https://smart-surveillance-demo.example.com',
-    date: 'Mar 2024'
+    title: "E-commerce Website",
+    description: "A full-featured e-commerce platform built with PHP, MySQL, and Bootstrap. Includes user authentication, product management, shopping cart, and checkout functionality.",
+    technologies: ["PHP", "MySQL", "Bootstrap", "HTML", "CSS"],
+    githubLink: "https://github.com/Pawan12221468/E-CommercePHP",
+    demoLink: null,
+    image: "/E-Commerce.png"
   },
   {
-    id: 2,
-    title: 'Weather Application',
-    description: 'Developed a fully functional weather application using React, enabling real-time weather updates, location-based forecasts, and interactive UI, increasing user engagement by 45%.',
-    image: '/Weather.png',
-    technologies: ['React', 'Weather API', 'JavaScript', 'CSS3', 'HTML5'],
-    features: [
-      'Optimized API calls with caching mechanisms, reducing data fetch time by 30% and improving app performance',
-      'Implemented a responsive and intuitive UI with dynamic theme switching based on weather conditions, enhancing user experience by 35%',
-      'Integrated a search feature with debouncing logic, reducing API request load by 40% and improving response accuracy'
-    ],
-    github: 'https://github.com/NamanPrakash99/Weather-Forecast',
-    live: 'https://weather-forecast-sage-five.vercel.app/',
-    date: 'Jan 2024'
-  },
-  {
-    id: 3,
-    title: 'E-Commerce Website',
-    description: 'Developed a fully functional e-commerce platform with product browsing, cart management, and secure payments, increased user engagement by 40%.',
-    image: '/E-Commerce.png',
-    technologies: ['MongoDB', 'Express', 'React', 'Node.js'],
-    features: [
-      'Optimized data storage and order history, improved efficiency by 30%',
-      'Implemented real-time cart updates with token-based transactions, enhanced checkout speed by 25%',
-      'Enhanced search functionality using debouncing logic, reduced response time by 35%',
-      'Built an admin dashboard to streamline backend operations, boosted efficiency by 40%'
-    ],
-    github: 'https://github.com/NamanPrakash99/E-Commerce--Website',
-    live: 'https://reactproject-frontend.vercel.app/',
-    date: 'Nov 2024'
-  },
-  {
-    id: 4,
-    title: 'Cement Procurement and Management Platform',
-    description: 'Created a web platform for cement procurement and order management, boosted order processing efficiency by 35%.',
-    image: '/Cement.png',
-    technologies: ['Angular', 'MongoDB', 'Express.js'],
-    features: [
-      'Integrated secure user authentication and role-based access control, strengthened system security by 40%',
-      'Refined backend communication through RESTful APIs, boosted response speed by 30%',
-      'Deployed the frontend on Netlify and the backend on Render, increased platform availability by 45%'
-    ],
-    github: 'https://github.com/NamanPrakash99/cement-website-new/tree/main/project1',
-    live: 'https://cement-website-new.onrender.com/',
-    date: 'Apr 2024'
+    title: "Weather Forecast App",
+    description: "A real-time weather application built with React and Vite. Features include current weather, 5-day forecast, and location-based weather data using OpenWeatherMap API.",
+    technologies: ["React", "Vite", "TypeScript", "Tailwind CSS", "OpenWeatherMap API"],
+    githubLink: "https://github.com/Pawan12221468/Weather",
+    demoLink: null,
+    image: "/Weather.png"
   }
 ];
 
@@ -85,10 +40,10 @@ export default function ProjectsSection() {
           <div className="flex flex-wrap justify-center mb-8">
             {projects.map((project) => (
               <button
-                key={project.id}
+                key={project.title}
                 onClick={() => setActiveProject(project)}
                 className={`px-4 py-2 mx-2 mb-2 rounded-full transition-colors ${
-                  activeProject.id === project.id
+                  activeProject.title === project.title
                     ? 'bg-primary-500 text-white'
                     : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                 }`}
@@ -100,18 +55,18 @@ export default function ProjectsSection() {
           
           {/* Active Project Display */}
           <motion.div
-            key={activeProject.id}
+            key={activeProject.title}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
           >
             {/* Project Image */}
-            <div className="rounded-xl overflow-hidden shadow-lg">
+            <div className="rounded-xl overflow-hidden shadow-lg group">
               <img
                 src={activeProject.image}
                 alt={activeProject.title}
-                className="w-full aspect-video object-cover object-center"
+                className="w-full aspect-video object-cover object-center transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl"
               />
             </div>
             
@@ -121,25 +76,11 @@ export default function ProjectsSection() {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                   {activeProject.title}
                 </h3>
-                <span className="text-sm text-gray-500 dark:text-gray-400">
-                  {activeProject.date}
-                </span>
               </div>
               
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 {activeProject.description}
               </p>
-              
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  Key Features:
-                </h4>
-                <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
-                  {activeProject.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
               
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
@@ -158,9 +99,9 @@ export default function ProjectsSection() {
               </div>
               
               <div className="flex space-x-4">
-                {activeProject.github && (
+                {activeProject.githubLink && (
                   <a
-                    href={activeProject.github}
+                    href={activeProject.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
@@ -170,9 +111,9 @@ export default function ProjectsSection() {
                   </a>
                 )}
                 
-                {activeProject.live && (
+                {activeProject.demoLink && (
                   <a
-                    href={activeProject.live}
+                    href={activeProject.demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"

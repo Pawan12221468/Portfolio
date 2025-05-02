@@ -25,8 +25,8 @@ export default function AboutSection() {
               <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
                 {/* Profile photo */}
                 <img 
-                  src="/profile.jpg" 
-                  alt="Naman Prakash" 
+                  src="/pic.jpg" 
+                  alt="Pawan Kumar Dubey" 
                   className="w-full aspect-[4/5] object-cover object-top"
                 />
               </div>
@@ -42,27 +42,19 @@ export default function AboutSection() {
             className="lg:col-span-3"
           >
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Computer Science Student & Developer
+              Full Stack Developer & Problem Solver
             </h3>
             
             <div className="space-y-4 text-gray-700 dark:text-gray-300">
               <p>
-                Hello! I'm Naman, a Computer Science and Engineering student at Lovely Professional University, with a passion for creating elegant solutions to complex problems.
-              </p>
-              
-              <p>
-                With experience in both frontend and backend development, I enjoy working across the entire stack. My tech journey began with C++ and has expanded to include modern web technologies like React, Angular, and Node.js.
+                Hello! I'm Pawan Kumar Dubey, a Computer Science and Engineering student at Lovely Professional University, with a passion for building innovative web applications and solving complex problems.
               </p>
               
               
-
-              <p>
-                I'm constantly learning and exploring new technologies to stay at the forefront of web development trends. I'm particularly interested in creating accessible, responsive, and performant web applications.
-              </p>
             </div>
             
             <div className="mt-8">
-              <a href="/Naman_CV.pdf" download="Naman_CV.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/pawancv.pdf" download="pawancv.pdf" target="_blank" rel="noopener noreferrer">
                 <Button>
                   Download CV
                 </Button>

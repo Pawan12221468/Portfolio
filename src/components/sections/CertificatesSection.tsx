@@ -1,43 +1,78 @@
 import { motion } from 'framer-motion';
 import { FiExternalLink } from 'react-icons/fi';
+import { useRef } from 'react';
 
 interface Certificate {
   title: string;
-  organization: string;
+  issuer: string;
   date: string;
   link: string;
+  image: string;
 }
 
 export default function CertificatesSection() {
-  const certificates: Certificate[] = [
+  const certificates = [
     {
-      title: "Learning MEAN Stack by Building Real world Application",
-      organization: "Board Infinity(Coursera)",
-      date: "Sep' 24",
-      link: "https://drive.google.com/file/d/1UoQusvBMRM02T6LNoXeYTI23Cq4QmDi2/view?usp=sharing"
+      title: "GenAI for Everyone",
+      issuer: "Fractal Analytics / Coursera",
+      date: "Feb 26, 2024",
+      link: "https://coursera.org/verify/R6ZV7JGH2EY2",
+      image: "/genai-for-everyone.png"
     },
     {
-      title: "Data Structures and Algorithm",
-      organization: "GFG",
-      date: "Jul' 24",
-      link: "https://drive.google.com/file/d/1bpAw-U-YTP8TEqyqz45RO8fAP9PfOKLZ/view?usp=sharing"
+      title: "Algorithms on Strings",
+      issuer: "Google",
+      date: "2024",
+      link: "https://drive.google.com/file/d/1icdi-y2AqYMXq64yEVsYLtCb5Ghoq6rI/view?usp=sharing",
+      image: "/algorithms-on-strings.png"
     },
     {
-      title: "Computer Architecture and Computer Organization Masterclass",
-      organization: "Udemy",
-      date: "Feb' 24",
-      link: "https://drive.google.com/file/d/1paYjS-Q9Q_3rUiQ-1DEw1xkPUtEv_dgY/view?usp=sharing"
+      title: "Approximation Algorithms and Linear Programming",
+      issuer: "Google",
+      date: "2024",
+      link: "https://drive.google.com/file/d/1Vbx_ae7BOSSfWb6WtF9XKMvCdtp2Ne51/view?usp=sharing",
+      image: "/approximation-algorithms.png"
     },
     {
-      title: "Programming in C++",
-      organization: "Coursera",
-      date: "Jan' 24",
-      link: "https://drive.google.com/file/d/1a90SJ7YMBuMdcO_F4qdXS96P1x-RBk5Q/view?usp=sharing"
+      title: "Programming in C++: A Hands-on Introduction",
+      issuer: "Google",
+      date: "2024",
+      link: "https://drive.google.com/file/d/1H3Meo0UGsadQJQU40NzQIEDebrUyYgAT/view?usp=sharing",
+      image: "/programming-in-cpp.png"
+    },
+    {
+      title: "The Bits and Bytes of Computer Networking",
+      issuer: "Google",
+      date: "2024",
+      link: "https://drive.google.com/file/d/11ogaDV4pCaYWdEnH3fGjH2NTjymB6ic4/view?usp=sharing",
+      image: "/bits-and-bytes.png"
     }
   ];
 
+  // Duplicate certificates for seamless infinite scroll
+  const allCertificates = [...certificates, ...certificates];
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <section id="certificates" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="certificates" className="py-16 bg-gray-900">
+      <style>
+        {`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-300px * ${certificates.length}));
+            }
+          }
+          .certificate-scroll {
+            animation: scroll 20s linear infinite;
+          }
+          .certificate-scroll:hover {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,35 +80,32 @@ export default function CertificatesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Certificates</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-cyan-400">My Certificates</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {certificates.map((cert, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{cert.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{cert.organization}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">{cert.date}</p>
+          <div className="relative h-[320px] overflow-hidden" ref={containerRef}>
+            <div className="flex absolute certificate-scroll">
+              {allCertificates.map((cert, index) => (
+                <a
+                  key={`${index}-${cert.title}`}
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-[300px] flex-shrink-0 mx-3 bg-white dark:bg-gray-800 shadow-lg rounded-xl p-0 flex flex-col justify-start items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-2xl"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <div className="w-full h-[170px] rounded-t-xl overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="object-contain w-full h-full"
+                    />
                   </div>
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-                  >
-                    <FiExternalLink className="w-5 h-5" />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="p-4 flex flex-col flex-1 justify-center items-center">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 line-clamp-2">{cert.title}</h3>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

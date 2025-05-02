@@ -23,8 +23,8 @@ const experiences: ActivityItem[] = [
     type: 'education',
     title: 'Bachelor of Technology',
     organization: 'Lovely Professional University',
-    location: 'Phagwara, Punjab',
-    description: 'Computer Science and Engineering; CGPA: 7.12',
+    location: 'Punjab, India',
+    description: 'Computer Science and Engineering; CGPA: 6.4',
     date: 'Sep 2022 - Present',
     icon: <FiBook />
   },
@@ -32,20 +32,20 @@ const experiences: ActivityItem[] = [
     id: 2,
     type: 'education',
     title: 'Intermediate',
-    organization: "St. Xavier's High School",
-    location: 'Azamgarh, Uttar Pradesh',
-    description: 'PCM; Percentage: 90.6%',
-    date: 'Apr 2020 - Mar 2021',
+    organization: 'Children garden Public School',
+    location: 'Bhabua(Kaimur), Bihar',
+    description: 'Percentage: 74.4%',
+    date: 'May 2019 - April 2021',
     icon: <FiBook />
   },
   {
     id: 3,
     type: 'education',
     title: 'Matriculation',
-    organization: "St. Xavier's High School",
-    location: 'Azamgarh, Uttar Pradesh',
+    organization: 'Glorious Academy',
+    location: 'Varanasi, Uttar Pradesh',
     description: 'Percentage: 87%',
-    date: 'Apr 2018 - Mar 2019',
+    date: 'April 2018 - March 2020',
     icon: <FiBook />
   }
 ];
@@ -54,37 +54,36 @@ const coCurricularActivities: ActivityItem[] = [
   {
     id: 4,
     type: 'co-curricular',
-    title: 'Hackathon Participation',
-    organization: 'Dr. Code Drive Hackathon',
+    title: 'Full-Stack Development Using MERN',
+    organization: 'Cipher School',
     location: '',
-    description: 'Developed a lead-generation website that automatically sends emails to accounts with the highest leads.',
-    date: 'Mar 2025',
+    description: 'Completed a MERN stack internship, building a full-stack food delivery application from scratch. Designed and developed a dynamic food delivery platform, implementing real-time order tracking and a seamless user experience.',
+    date: 'July 2024',
     icon: <FiCode />
   },
   {
     id: 5,
     type: 'co-curricular',
-    title: 'Team Lead',
+    title: 'Hack AI Hackathon Participant',
     organization: 'Hackathon',
     location: '',
-    description: 'Lead a team of 3 members to develop a sports networking platform.',
-    date: 'Oct 2024',
+    description: 'Participated in the Hack AI Hackathon',
+    date: '24th February 2025',
     icon: <FiUsers />
-  },
-  {
-    id: 6,
-    type: 'co-curricular',
-    title: 'Volunteer',
-    organization: 'Sudeeksha Nai Raah Foundation',
-    location: '',
-    description: 'Volunteered teaching underprivileged children, adapted methods to diverse learning needs, developed communication skills relevant to technical presentations.',
-    date: 'Jun 2023',
-    icon: <FiHeart />
   }
 ];
 
 const extraCurricularActivities: ActivityItem[] = [
-  // Empty array since we moved the volunteer work to co-curricular
+  {
+    id: 6,
+    type: 'extra-curricular',
+    title: 'LeetCode Achievements',
+    organization: 'LeetCode',
+    location: '',
+    description: 'Earned LeetCode Daily Challenge Badges for January 2025 & February 2025. Secured Global Rank 1845 in LeetCode Weekly Contests among 667,997 global participants.',
+    date: 'January 2025 - February 2025',
+    icon: <FiHeart />
+  }
 ];
 
 export default function ExperienceSection() {
